@@ -1,152 +1,249 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-title-ar="تواصل معنا | البيت السيبراني السوداني" data-title-en="Contact Us | Sudan Cyber House">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تواصل معنا | Sudan Cyber House</title>
-<meta name="description" content="تواصل مع Sudan Cyber House عبر البريد الإلكتروني أو نموذج التواصل.">
-<meta property="og:title" content="تواصل معنا | Sudan Cyber House">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تواصل معنا | البيت السيبراني السوداني</title>
+<meta name="description" content="تواصل مع فريق البيت السيبراني السوداني لبدء تقييم أمني، أو الاستفسار عن خدماتنا في الأمن السيبراني." />
+<meta name="theme-color" content="#0A2540" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22 fill=%22%230F4C81%22>🛡</text></svg>" />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="contact">
+<body>
 
-<div class="bg-glow"></div>
-<div class="bg-grid"></div>
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></div>
+  <div class="loader-bar"></div>
+  <div class="loader-text" data-ar="جاري تأمين الاتصال" data-en="Securing connection">جاري تأمين الاتصال</div>
+</div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="brand">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#00D9FF"/><stop offset="1" stop-color="#2E6BFF"/>
-          </linearGradient>
-        </defs>
-        <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="url(#logoGrad)" stroke-width="2"/>
-        <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="url(#logoGrad)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-        <circle cx="18" cy="15.6" r="1.6" fill="#00D9FF"/>
-        <circle cx="24" cy="27" r="1.6" fill="#00D9FF"/>
-        <circle cx="18" cy="27.2" r="1.6" fill="#2E6BFF"/>
-      </svg>
-      <span class="brand-text">
-        <span class="brand-name-en">Sudan Cyber House</span>
-        <span class="brand-name-ar">البيت السيبراني السوداني</span>
-      </span>
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Sudan Cyber House">
+      <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+      <span class="brand-name" data-ar="البيت السيبراني<br>السوداني" data-en="Sudan Cyber<br>House">البيت السيبراني<br>السوداني</span>
     </a>
-
-    <nav class="main-nav">
-      <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-      <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-      <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-      <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-      <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="about.html" data-ar="من نحن" data-en="About">من نحن</a>
+      <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a>
+      <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      <a href="contact.html" class="btn btn-primary btn-sm" data-ar="اطلب استشارة" data-en="Get a Consultation">اطلب استشارة</a>
     </nav>
-
-    <div class="header-actions">
-      <div class="lang-toggle">
-        <span data-lang="ar" class="is-active">العربية</span><span data-lang="en">English</span>
-      </div>
-      <button class="btn-menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+        <span class="lang-label">EN</span>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
-
-  <nav class="mobile-nav">
-    <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-    <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-    <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-    <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-    <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
-  </nav>
 </header>
 
 <main>
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow" style="justify-content:center;" data-i18n="page.contact.eyebrow">تواصل معنا</div>
-      <h1 data-i18n="contact.title">تواصل مع Sudan Cyber House</h1>
-      <p data-i18n="contact.sub">يسعدنا تواصلك معنا لأي استفسار أو شراكة أو فكرة.</p>
-    </div>
-  </section>
 
-  <section class="section-tight">
-    <div class="container">
-      <div class="contact-wrap">
-
-        <div class="contact-info-card reveal">
-          <h3 data-i18n="contact.infoTitle">معلومات التواصل</h3>
-          <div class="contact-info-row">
-            <span data-i18n="contact.email">البريد الإلكتروني</span>
-          </div>
-          <div class="contact-info-row"><strong>dr.ayman.alkinani@gmail.com</strong></div>
-          <div class="contact-info-row">
-            <span data-i18n="contact.location">الموقع</span>
-          </div>
-          <div class="contact-info-row"><span data-i18n="contact.locationVal">السودان — Online</span></div>
-        </div>
-
-        <form class="reveal" id="contact-form" novalidate>
-          <div class="form-group">
-            <label data-i18n="contact.formName">الاسم</label>
-            <input type="text" data-field="name" autocomplete="name">
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label data-i18n="contact.formEmail">البريد الإلكتروني</label>
-            <input type="email" data-field="email" autocomplete="email">
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label data-i18n="contact.formSubject">الموضوع</label>
-            <input type="text" data-field="subject">
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label data-i18n="contact.formMessage">الرسالة</label>
-            <textarea data-field="message"></textarea>
-            <span class="form-error"></span>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.formSubmit">إرسال</button>
-          <div class="form-success"></div>
-        </form>
-
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
+<section class="page-hero" style="--banner:url(assets/img/banner-contact.svg)">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <svg class="brand-mark" width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="#00D9FF" stroke-width="2"/>
-            <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="#00D9FF" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-          </svg>
-          <span class="brand-name-en">Sudan Cyber House</span>
+    <div class="breadcrumb"><span data-ar="الرئيسية" data-en="Home">الرئيسية</span><span class="sep">/</span><span data-ar="تواصل معنا" data-en="Contact">تواصل معنا</span></div>
+    <h1 data-ar="لنبدأ محادثة" data-en="Let's Start a Conversation">لنبدأ محادثة</h1>
+    <p data-ar="سواء كان لديك حادث أمني عاجل أو استفسار عام، فريقنا جاهز للاستماع والمساعدة." data-en="Whether you have an urgent security incident or a general inquiry, our team is ready to listen and help.">سواء كان لديك حادث أمني عاجل أو استفسار عام، فريقنا جاهز للاستماع والمساعدة.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-wrap">
+
+      <!-- Contact Info -->
+      <div class="reveal">
+        <div class="glass contact-info-card">
+          <span class="eyebrow" data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</span>
+          <h3 style="font-size:22px; font-weight:700; margin-bottom:6px;" data-ar="تواصل معنا مباشرة" data-en="Reach Us Directly">تواصل معنا مباشرة</h3>
+          <p style="font-size:14.5px; margin-bottom:10px;" data-ar="نرد على جميع الرسائل في أقرب وقت ممكن." data-en="We respond to all messages as soon as possible.">نرد على جميع الرسائل في أقرب وقت ممكن.</p>
+
+          <div class="contact-info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+            <div>
+              <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+              <a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h4 data-ar="الموقع" data-en="Location">الموقع</h4>
+              <p data-ar="السودان" data-en="Sudan">السودان</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div>
+              <h4 data-ar="أوقات الاستجابة" data-en="Response Hours">أوقات الاستجابة</h4>
+              <p data-ar="دعم الحوادث الطارئة على مدار الساعة" data-en="24/7 emergency incident support">دعم الحوادث الطارئة على مدار الساعة</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+            <div>
+              <h4 data-ar="طبيعة الشركة" data-en="Company Status">طبيعة الشركة</h4>
+              <p data-ar="شركة خاصة مستقلة، ليست جهة حكومية" data-en="Independent private company, not a government entity">شركة خاصة مستقلة، ليست جهة حكومية</p>
+            </div>
+          </div>
         </div>
-        <p data-i18n="footer.tagline">نبني مستقبل السودان السيبراني.</p>
+
+        <div class="glass map-glass reveal">
+          <div class="map-inner">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#00D4FF" stroke-width="1.6" style="margin-inline:auto; margin-bottom:12px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div data-ar="السودان — نخدم عملاءنا محليًا وإقليميًا عن بُعد وفي الموقع" data-en="Sudan — serving our clients locally and regionally, remotely and on-site">السودان — نخدم عملاءنا محليًا وإقليميًا عن بُعد وفي الموقع</div>
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.linksTitle">روابط</h4>
-        <a href="index.html" data-i18n="nav.home">الرئيسية</a>
-        <a href="about.html" data-i18n="nav.about">من نحن</a>
-        <a href="events.html" data-i18n="nav.events">الفعاليات</a>
-        <a href="invest.html" data-i18n="nav.invest">الاستثمار</a>
-        <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+
+      <!-- Contact Form -->
+      <div class="glass form-card reveal">
+        <span class="eyebrow" data-ar="أرسل رسالة" data-en="Send a Message">أرسل رسالة</span>
+        <h3 style="font-size:22px; font-weight:700; margin-bottom:24px;" data-ar="أخبرنا كيف يمكننا مساعدتك" data-en="Tell Us How We Can Help">أخبرنا كيف يمكننا مساعدتك</h3>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name"><span data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</span> <span class="req">*</span></label>
+              <input type="text" id="cf-name" class="form-control" required
+                     placeholder="أدخل اسمك الكامل"
+                     data-ar-placeholder="أدخل اسمك الكامل" data-en-placeholder="Enter your full name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email"><span data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span> <span class="req">*</span></label>
+              <input type="email" id="cf-email" class="form-control" required
+                     placeholder="example@email.com"
+                     data-ar-placeholder="example@email.com" data-en-placeholder="example@email.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-subject"><span data-ar="الموضوع" data-en="Subject">الموضوع</span> <span class="req">*</span></label>
+            <input type="text" id="cf-subject" class="form-control" required
+                   placeholder="مثال: طلب تقييم أمني"
+                   data-ar-placeholder="مثال: طلب تقييم أمني" data-en-placeholder="e.g. Request for a security assessment" />
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message"><span data-ar="الرسالة" data-en="Message">الرسالة</span> <span class="req">*</span></label>
+            <textarea id="cf-message" class="form-control" required
+                      placeholder="اكتب تفاصيل استفسارك هنا..."
+                      data-ar-placeholder="اكتب تفاصيل استفسارك هنا..." data-en-placeholder="Write the details of your inquiry here..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
+          <div id="formStatus" class="form-status" role="status"></div>
+          <p class="form-note" data-ar="* الحقول المطلوبة. لن نشارك بياناتك مع أي طرف ثالث." data-en="* Required fields. We will never share your data with a third party.">* الحقول المطلوبة. لن نشارك بياناتك مع أي طرف ثالث.</p>
+        </form>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.contactTitle">تواصل</h4>
-        <span>dr.ayman.alkinani@gmail.com</span>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span data-i18n="footer.rights">© 2026 Sudan Cyber House. جميع الحقوق محفوظة.</span>
-      <span class="signature" data-i18n="footer.signature">تصميم وتطوير: Kin</span>
+
     </div>
   </div>
+</section>
+
+<!-- ===== FAQ mini ===== -->
+<section class="section-sm sec-soft">
+  <div class="container">
+    <div class="grid" style="grid-template-columns: 1fr; max-width:760px; margin-inline:auto;">
+      <div class="section-head center reveal">
+        <span class="eyebrow" data-ar="قبل أن تتواصل" data-en="Before You Reach Out">قبل أن تتواصل</span>
+        <h2 class="section-title" style="font-size:26px;" data-ar="ماذا يحدث بعد إرسال رسالتك؟" data-en="What Happens After You Send Your Message?">ماذا يحدث بعد إرسال رسالتك؟</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4 data-ar="١. نستلم رسالتك" data-en="1. We Receive Your Message">١. نستلم رسالتك</h4>
+          <p data-ar="يصلنا استفسارك مباشرة عبر البريد الإلكتروني الرسمي للشركة." data-en="Your inquiry reaches us directly via the company's official email.">يصلنا استفسارك مباشرة عبر البريد الإلكتروني الرسمي للشركة.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4 data-ar="٢. نراجع احتياجك" data-en="2. We Review Your Needs">٢. نراجع احتياجك</h4>
+          <p data-ar="يقوم فريقنا بمراجعة تفاصيل طلبك لتحديد الخدمة الأنسب." data-en="Our team reviews your request details to identify the best-fit service.">يقوم فريقنا بمراجعة تفاصيل طلبك لتحديد الخدمة الأنسب.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4 data-ar="٣. نرد عليك" data-en="3. We Respond">٣. نرد عليك</h4>
+          <p data-ar="نتواصل معك عبر البريد الإلكتروني لمناقشة الخطوات التالية." data-en="We reach out via email to discuss the next steps.">نتواصل معك عبر البريد الإلكتروني لمناقشة الخطوات التالية.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-top">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+        <p data-ar="البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام." data-en="Sudan Cyber House — an independent private cybersecurity company. Security & Peace.">البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام.</p>
+        <span class="footer-badge" data-ar="شركة خاصة غير حكومية" data-en="Private, Non-Government Company">شركة خاصة غير حكومية</span>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="mailto:dr.ayman.alkinani@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+          <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+          <li><a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a></li>
+          <li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="خدمات مختارة" data-en="Featured Services">خدمات مختارة</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" data-ar="اختبار الاختراق" data-en="Penetration Testing">اختبار الاختراق</a></li>
+          <li><a href="services.html" data-ar="الاستجابة للحوادث" data-en="Incident Response">الاستجابة للحوادث</a></li>
+          <li><a href="services.html" data-ar="مركز العمليات الأمنية" data-en="SOC">مركز العمليات الأمنية</a></li>
+          <li><a href="services.html" data-ar="أمن السحابة" data-en="Cloud Security">أمن السحابة</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4 class="footer-title" data-ar="تواصل معنا" data-en="Get in Touch">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 21a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3 3h4a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.1 10.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 17.92z"/></svg><span data-ar="متاح عبر البريد الإلكتروني" data-en="Available via email">متاح عبر البريد الإلكتروني</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="السودان" data-en="Sudan">السودان</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container footer-bottom">
+    <span data-ar="© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة." data-en="© 2026 Sudan Cyber House (SCH). All rights reserved.">© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة.</span>
+    <span class="legal-note" data-ar="شركة خاصة مستقلة — ليست جهة حكومية" data-en="Independent Private Company — Not a Government Entity">شركة خاصة مستقلة — ليست جهة حكومية</span>
+  </div>
 </footer>
+
+<!-- ===== Mobile app bar ===== -->
+<nav class="tabbar" aria-label="التنقل الرئيسي">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+  <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-ar="من نحن" data-en="About">من نحن</span></a>
+  <a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-ar="الخدمات" data-en="Services">الخدمات</span></a>
+  <a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span data-ar="الفعاليات" data-en="Events">الفعاليات</span></a>
+  <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 6-10 7L2 6"/></svg><span data-ar="تواصل" data-en="Contact">تواصل</span></a>
+</nav>
+
+
+<button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="main.js"></script>
 </body>

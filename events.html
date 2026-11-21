@@ -1,154 +1,288 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-title-ar="الفعاليات | البيت السيبراني السوداني" data-title-en="Events | Sudan Cyber House">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الفعاليات | Sudan Cyber House</title>
-<meta name="description" content="فعاليات Sudan Cyber House القادمة في رحلة بناء المجتمع السيبراني السوداني.">
-<meta property="og:title" content="الفعاليات | Sudan Cyber House">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الفعاليات | البيت السيبراني السوداني</title>
+<meta name="description" content="فعاليات البيت السيبراني السوداني (SCH) — ندوات إلكترونية ومؤتمرات حضورية في الأمن السيبراني بالسودان ومصر والمنطقة." />
+<meta name="theme-color" content="#0A2540" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22 fill=%22%230F4C81%22>🛡</text></svg>" />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="events.css" />
 </head>
-<body data-page="events">
+<body>
 
-<div class="bg-glow"></div>
-<div class="bg-grid"></div>
+<!-- ===== Loading Screen ===== -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></div>
+  <div class="loader-bar"></div>
+  <div class="loader-text" data-ar="جاري تأمين الاتصال" data-en="Securing connection">جاري تأمين الاتصال</div>
+</div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="brand">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#00D9FF"/><stop offset="1" stop-color="#2E6BFF"/>
-          </linearGradient>
-        </defs>
-        <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="url(#logoGrad)" stroke-width="2"/>
-        <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="url(#logoGrad)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-        <circle cx="18" cy="15.6" r="1.6" fill="#00D9FF"/>
-        <circle cx="24" cy="27" r="1.6" fill="#00D9FF"/>
-        <circle cx="18" cy="27.2" r="1.6" fill="#2E6BFF"/>
-      </svg>
-      <span class="brand-text">
-        <span class="brand-name-en">Sudan Cyber House</span>
-        <span class="brand-name-ar">البيت السيبراني السوداني</span>
-      </span>
+<!-- ===== Navbar ===== -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Sudan Cyber House">
+      <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+      <span class="brand-name" data-ar="البيت السيبراني<br>السوداني" data-en="Sudan Cyber<br>House">البيت السيبراني<br>السوداني</span>
     </a>
 
-    <nav class="main-nav">
-      <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-      <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-      <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-      <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-      <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="about.html" data-ar="من نحن" data-en="About">من نحن</a>
+      <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a>
+      <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      <a href="contact.html" class="btn btn-primary btn-sm" data-ar="اطلب استشارة" data-en="Get a Consultation">اطلب استشارة</a>
     </nav>
 
-    <div class="header-actions">
-      <div class="lang-toggle">
-        <span data-lang="ar" class="is-active">العربية</span><span data-lang="en">English</span>
-      </div>
-      <button class="btn-menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+        <span class="lang-label">EN</span>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
-
-  <nav class="mobile-nav">
-    <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-    <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-    <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-    <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-    <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
-  </nav>
 </header>
 
 <main>
-  <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow" style="justify-content:center;" data-i18n="page.events.eyebrow">الفعاليات</div>
-      <h1 data-i18n="page.events.title">فعاليات Sudan Cyber House</h1>
-      <p data-i18n="page.events.sub">محطات قادمة في رحلة بناء المجتمع السيبراني السوداني.</p>
+
+<!-- ===== Page Hero ===== -->
+<section class="page-hero" style="--banner:url(assets/img/banner-events.svg)">
+  <div class="container">
+    <div class="breadcrumb reveal in-view">
+      <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+      <span class="sep">/</span>
+      <span data-ar="الفعاليات" data-en="Events">الفعاليات</span>
     </div>
-  </section>
+    <span class="eyebrow reveal in-view" data-ar="التقويم القادم" data-en="Upcoming Calendar">التقويم القادم</span>
+    <h1 class="reveal in-view" data-ar="فعاليات البيت السيبراني السوداني" data-en="Sudan Cyber House Events">فعاليات البيت السيبراني السوداني</h1>
+    <p class="reveal in-view" data-ar="انضم إلى ندواتنا الإلكترونية ومؤتمراتنا الحضورية، وابنِ شبكة علاقات مع خبراء الأمن السيبراني في السودان ومصر والمنطقة." data-en="Join our online webinars and in-person conferences, and connect with cybersecurity experts across Sudan, Egypt, and the region.">
+      انضم إلى ندواتنا الإلكترونية ومؤتمراتنا الحضورية، وابنِ شبكة علاقات مع خبراء الأمن السيبراني في السودان ومصر والمنطقة.
+    </p>
+  </div>
+</section>
 
-  <section class="section-tight">
-    <div class="container">
-      <div class="events-grid reveal reveal-stagger">
+<!-- ===== Events ===== -->
+<section class="section">
+  <div class="container">
 
-        <article class="event-card" style="--i:0" tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="event-top">
-            <div class="event-num" data-i18n="event1.num">الفعالية 01</div>
-            <div class="event-status" data-i18n="event1.status">قريبًا</div>
-          </div>
-          <h3 data-i18n="event1.title">Sudan Cyber House — مارس 2027</h3>
-          <div class="event-date" data-i18n="event1.date">March 2027</div>
-          <div class="event-bottom">
-            <span data-i18n="event.viewMore">عرض التفاصيل</span>
-            <span class="event-arrow">←</span>
-          </div>
-        </article>
+    <!-- Filter chips (reuses existing initServiceFilter logic in main.js) -->
+    <div class="service-filter reveal in-view">
+      <button class="filter-chip active" data-filter="all" data-ar="جميع الفعاليات" data-en="All Events">جميع الفعاليات</button>
+      <button class="filter-chip" data-filter="online" data-ar="عبر الإنترنت" data-en="Online">عبر الإنترنت</button>
+      <button class="filter-chip" data-filter="onsite" data-ar="حضوري" data-en="In-Person">حضوري</button>
+    </div>
 
-        <article class="event-card" style="--i:1" tabindex="0" role="button" aria-haspopup="dialog">
-          <div class="event-top">
-            <div class="event-num" data-i18n="event2.num">الفعالية 02</div>
-            <div class="event-status" data-i18n="event2.status">قريبًا</div>
-          </div>
-          <h3 data-i18n="event2.title">Sudan Cyber House — سبتمبر 2027</h3>
-          <div class="event-date" data-i18n="event2.date">September 2027</div>
-          <div class="event-bottom">
-            <span data-i18n="event.viewMore">عرض التفاصيل</span>
-            <span class="event-arrow">←</span>
-          </div>
-        </article>
+    <div class="grid grid-2 events-grid">
 
+      <!-- Event 1 — Online — 20/02/2027 -->
+      <article class="card event-card reveal" data-category="online">
+        <div class="event-top">
+          <div class="event-date">
+            <span class="ed-day">20</span>
+            <span class="ed-month" data-ar="فبراير" data-en="FEB">فبراير</span>
+            <span class="ed-year">2027</span>
+          </div>
+          <span class="event-format fmt-online">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span data-ar="عبر الإنترنت" data-en="Online">عبر الإنترنت</span>
+          </span>
+        </div>
+        <h3 data-ar="ندوة التوعية بالأمن السيبراني" data-en="Cybersecurity Awareness Webinar">ندوة التوعية بالأمن السيبراني</h3>
+        <p data-ar="ندوة إلكترونية مباشرة تغطي أساسيات الحماية الرقمية، والتصيد الاحتيالي، وأفضل ممارسات الأمان للأفراد والمؤسسات." data-en="A live online session covering digital-safety fundamentals, phishing awareness, and security best practices for individuals and organizations.">
+          ندوة إلكترونية مباشرة تغطي أساسيات الحماية الرقمية، والتصيد الاحتيالي، وأفضل ممارسات الأمان للأفراد والمؤسسات.
+        </p>
+        <ul class="event-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="بث مباشر — رابط يُرسل عند التسجيل" data-en="Live stream — link sent upon registration">بث مباشر — رابط يُرسل عند التسجيل</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-ar="الساعة 6:00 مساءً بتوقيت الخرطوم" data-en="6:00 PM Khartoum Time">الساعة 6:00 مساءً بتوقيت الخرطوم</span>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-sm btn-block" data-ar="سجّل الآن" data-en="Register Now">سجّل الآن</a>
+      </article>
+
+      <!-- Event 2 — Online — 20/02/2027 -->
+      <article class="card event-card reveal" data-category="online">
+        <div class="event-top">
+          <div class="event-date">
+            <span class="ed-day">20</span>
+            <span class="ed-month" data-ar="فبراير" data-en="FEB">فبراير</span>
+            <span class="ed-year">2027</span>
+          </div>
+          <span class="event-format fmt-online">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span data-ar="عبر الإنترنت" data-en="Online">عبر الإنترنت</span>
+          </span>
+        </div>
+        <h3 data-ar="ورشة القرصنة الأخلاقية التطبيقية" data-en="Applied Ethical Hacking Workshop">ورشة القرصنة الأخلاقية التطبيقية</h3>
+        <p data-ar="ورشة عمل تفاعلية عن بعد تتناول أساليب اختبار الاختراق العملي، وتحليل الثغرات، وأدوات القرصنة الأخلاقية المستخدمة في الميدان." data-en="An interactive remote workshop covering hands-on penetration-testing techniques, vulnerability analysis, and field-used ethical hacking tools.">
+          ورشة عمل تفاعلية عن بعد تتناول أساليب اختبار الاختراق العملي، وتحليل الثغرات، وأدوات القرصنة الأخلاقية المستخدمة في الميدان.
+        </p>
+        <ul class="event-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="عبر منصة Zoom — رابط يُرسل عند التسجيل" data-en="Via Zoom — link sent upon registration">عبر منصة Zoom — رابط يُرسل عند التسجيل</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-ar="الساعة 8:00 مساءً بتوقيت الخرطوم" data-en="8:00 PM Khartoum Time">الساعة 8:00 مساءً بتوقيت الخرطوم</span>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-sm btn-block" data-ar="سجّل الآن" data-en="Register Now">سجّل الآن</a>
+      </article>
+
+      <!-- Event 3 — Khartoum, Sudan — 20/03/2027 -->
+      <article class="card event-card reveal" data-category="onsite">
+        <div class="event-top">
+          <div class="event-date">
+            <span class="ed-day">20</span>
+            <span class="ed-month" data-ar="مارس" data-en="MAR">مارس</span>
+            <span class="ed-year">2027</span>
+          </div>
+          <span class="event-format fmt-onsite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="حضوري" data-en="In-Person">حضوري</span>
+          </span>
+        </div>
+        <h3 data-ar="قمة الخرطوم للأمن السيبراني" data-en="Khartoum Cybersecurity Summit">قمة الخرطوم للأمن السيبراني</h3>
+        <p data-ar="مؤتمر حضوري يجمع خبراء ومؤسسات القطاعين العام والخاص لمناقشة تحديات الأمن السيبراني في السودان وسبل بناء منظومة دفاع رقمي وطنية." data-en="An in-person conference bringing together public- and private-sector experts and organizations to discuss Sudan's cybersecurity challenges and build a national digital-defense ecosystem.">
+          مؤتمر حضوري يجمع خبراء ومؤسسات القطاعين العام والخاص لمناقشة تحديات الأمن السيبراني في السودان وسبل بناء منظومة دفاع رقمي وطنية.
+        </p>
+        <ul class="event-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="الخرطوم، السودان" data-en="Khartoum, Sudan">الخرطوم، السودان</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-ar="من الساعة 9:00 صباحًا" data-en="Starts 9:00 AM">من الساعة 9:00 صباحًا</span>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-sm btn-block" data-ar="احجز مقعدك" data-en="Reserve Your Seat">احجز مقعدك</a>
+      </article>
+
+      <!-- Event 4 — Cairo, Egypt — 20/03/2027 -->
+      <article class="card event-card reveal" data-category="onsite">
+        <div class="event-top">
+          <div class="event-date">
+            <span class="ed-day">20</span>
+            <span class="ed-month" data-ar="مارس" data-en="MAR">مارس</span>
+            <span class="ed-year">2027</span>
+          </div>
+          <span class="event-format fmt-onsite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="حضوري" data-en="In-Person">حضوري</span>
+          </span>
+        </div>
+        <h3 data-ar="مؤتمر القاهرة الإقليمي للأمن السيبراني" data-en="Cairo Regional Cybersecurity Conference">مؤتمر القاهرة الإقليمي للأمن السيبراني</h3>
+        <p data-ar="مؤتمر إقليمي حضوري في القاهرة يستعرض أحدث اتجاهات الأمن السيبراني والاستجابة للحوادث، بمشاركة خبراء من مصر والسودان ودول المنطقة." data-en="A regional in-person conference in Cairo showcasing the latest cybersecurity and incident-response trends, with experts from Egypt, Sudan, and the wider region.">
+          مؤتمر إقليمي حضوري في القاهرة يستعرض أحدث اتجاهات الأمن السيبراني والاستجابة للحوادث، بمشاركة خبراء من مصر والسودان ودول المنطقة.
+        </p>
+        <ul class="event-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-ar="من الساعة 9:00 صباحًا" data-en="Starts 9:00 AM">من الساعة 9:00 صباحًا</span>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-sm btn-block" data-ar="احجز مقعدك" data-en="Reserve Your Seat">احجز مقعدك</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="eyebrow" data-ar="هل لديك فعالية تودّ استضافتنا فيها؟" data-en="Want to Host Us at Your Event?">هل لديك فعالية تودّ استضافتنا فيها؟</span>
+      <h2 data-ar="لنتعاون في فعاليتك القادمة" data-en="Let's Collaborate on Your Next Event">لنتعاون في فعاليتك القادمة</h2>
+      <p data-ar="نرحب بدعوات التحدث والشراكة في المؤتمرات والندوات المتخصصة في الأمن السيبراني." data-en="We welcome speaking invitations and partnerships for specialized cybersecurity conferences and webinars.">نرحب بدعوات التحدث والشراكة في المؤتمرات والندوات المتخصصة في الأمن السيبراني.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-ar="تواصل معنا الآن" data-en="Contact Us Now">تواصل معنا الآن</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
 
-<!-- Event modal -->
-<div class="modal-overlay" role="dialog" aria-modal="true">
-  <div class="modal-box">
-    <div class="modal-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5" stroke-linecap="round"/><circle cx="12" cy="16" r="0.6" fill="#00D9FF"/></svg>
-    </div>
-    <h3 data-i18n="modal.title">المشروع قيد التطوير</h3>
-    <p data-i18n="modal.text1">مازال المشروع قيد التنفيذ.</p>
-    <p data-i18n="modal.text2">سيتم نشر تفاصيل الفعالية على الموقع فور الاستعداد.</p>
-    <button class="btn btn-primary" data-modal-close data-i18n="modal.ok">حسنًا</button>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container">
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container footer-top">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <svg class="brand-mark" width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="#00D9FF" stroke-width="2"/>
-            <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="#00D9FF" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-          </svg>
-          <span class="brand-name-en">Sudan Cyber House</span>
+      <div class="footer-about">
+        <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+        <p data-ar="البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام." data-en="Sudan Cyber House — an independent private cybersecurity company. Security & Peace.">البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام.</p>
+        <span class="footer-badge" data-ar="شركة خاصة غير حكومية" data-en="Private, Non-Government Company">شركة خاصة غير حكومية</span>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="mailto:dr.ayman.alkinani@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
         </div>
-        <p data-i18n="footer.tagline">نبني مستقبل السودان السيبراني.</p>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.linksTitle">روابط</h4>
-        <a href="index.html" data-i18n="nav.home">الرئيسية</a>
-        <a href="about.html" data-i18n="nav.about">من نحن</a>
-        <a href="events.html" data-i18n="nav.events">الفعاليات</a>
-        <a href="invest.html" data-i18n="nav.invest">الاستثمار</a>
-        <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+          <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+          <li><a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a></li>
+          <li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.contactTitle">تواصل</h4>
-        <span>dr.ayman.alkinani@gmail.com</span>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="خدمات مختارة" data-en="Featured Services">خدمات مختارة</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" data-ar="اختبار الاختراق" data-en="Penetration Testing">اختبار الاختراق</a></li>
+          <li><a href="services.html" data-ar="الاستجابة للحوادث" data-en="Incident Response">الاستجابة للحوادث</a></li>
+          <li><a href="services.html" data-ar="مركز العمليات الأمنية" data-en="SOC">مركز العمليات الأمنية</a></li>
+          <li><a href="services.html" data-ar="أمن السحابة" data-en="Cloud Security">أمن السحابة</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4 class="footer-title" data-ar="تواصل معنا" data-en="Get in Touch">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 21a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3 3h4a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.1 10.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 17.92z"/></svg><span data-ar="متاح عبر البريد الإلكتروني" data-en="Available via email">متاح عبر البريد الإلكتروني</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="السودان" data-en="Sudan">السودان</span></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span data-i18n="footer.rights">© 2026 Sudan Cyber House. جميع الحقوق محفوظة.</span>
-      <span class="signature" data-i18n="footer.signature">تصميم وتطوير: Kin</span>
-    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container footer-bottom">
+    <span data-ar="© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة." data-en="© 2026 Sudan Cyber House (SCH). All rights reserved.">© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة.</span>
+    <span class="legal-note" data-ar="شركة خاصة مستقلة — ليست جهة حكومية" data-en="Independent Private Company — Not a Government Entity">شركة خاصة مستقلة — ليست جهة حكومية</span>
   </div>
 </footer>
+
+<!-- ===== Mobile app bar ===== -->
+<nav class="tabbar" aria-label="التنقل الرئيسي">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+  <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-ar="من نحن" data-en="About">من نحن</span></a>
+  <a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-ar="الخدمات" data-en="Services">الخدمات</span></a>
+  <a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span data-ar="الفعاليات" data-en="Events">الفعاليات</span></a>
+  <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 6-10 7L2 6"/></svg><span data-ar="تواصل" data-en="Contact">تواصل</span></a>
+</nav>
+
+
+<button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="main.js"></script>
 </body>

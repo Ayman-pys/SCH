@@ -1,364 +1,415 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-title-ar="البيت السيبراني السوداني | أمان وسلام" data-title-en="Sudan Cyber House | Security & Peace">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sudan Cyber House | البيت السيبراني السوداني</title>
-<meta name="description" content="البيت السيبراني السوداني — تعليم مجاني للأمن السيبراني لكل السودانيين من 10 إلى 70 عامًا. Sudan Cyber House: free cybersecurity education for all Sudanese, aged 10 to 70.">
-<meta property="og:title" content="Sudan Cyber House | البيت السيبراني السوداني">
-<meta property="og:description" content="نبني جيلًا سودانيًا يقود مستقبل الأمن السيبراني.">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>البيت السيبراني السوداني | أمان وسلام</title>
+<meta name="description" content="البيت السيبراني السوداني (SCH) — شركة خاصة مستقلة متخصصة في الأمن السيبراني: اختبار الاختراق، الاستجابة للحوادث، مركز العمليات الأمنية، وأمن الشبكات والسحابة." />
+<meta name="theme-color" content="#0A2540" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22 fill=%22%230F4C81%22>🛡</text></svg>" />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="assets/img/hero.svg" />
+<link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="index">
+<body class="hero-page">
 
-<div class="bg-glow"></div>
-<div class="bg-grid"></div>
+<!-- ===== Loading Screen ===== -->
+<div id="loading-screen" aria-hidden="true">
+  <div class="loader-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></div>
+  <div class="loader-bar"></div>
+  <div class="loader-text" data-ar="جاري تأمين الاتصال" data-en="Securing connection">جاري تأمين الاتصال</div>
+</div>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="brand">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#00D9FF"/><stop offset="1" stop-color="#2E6BFF"/>
-          </linearGradient>
-        </defs>
-        <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="url(#logoGrad)" stroke-width="2"/>
-        <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="url(#logoGrad)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-        <circle cx="18" cy="15.6" r="1.6" fill="#00D9FF"/>
-        <circle cx="24" cy="27" r="1.6" fill="#00D9FF"/>
-        <circle cx="18" cy="27.2" r="1.6" fill="#2E6BFF"/>
-      </svg>
-      <span class="brand-text">
-        <span class="brand-name-en">Sudan Cyber House</span>
-        <span class="brand-name-ar">البيت السيبراني السوداني</span>
-      </span>
+<!-- ===== Navbar ===== -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Sudan Cyber House">
+      <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+      <span class="brand-name" data-ar="البيت السيبراني<br>السوداني" data-en="Sudan Cyber<br>House">البيت السيبراني<br>السوداني</span>
     </a>
 
-    <nav class="main-nav">
-      <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-      <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-      <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-      <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-      <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="about.html" data-ar="من نحن" data-en="About">من نحن</a>
+      <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a>
+      <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      <a href="contact.html" class="btn btn-primary btn-sm" data-ar="اطلب استشارة" data-en="Get a Consultation">اطلب استشارة</a>
     </nav>
 
-    <div class="header-actions">
-      <div class="lang-toggle">
-        <span data-lang="ar" class="is-active">العربية</span><span data-lang="en">English</span>
-      </div>
-      <button class="btn-menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+        <span class="lang-label">EN</span>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
-
-  <nav class="mobile-nav">
-    <a href="index.html" data-page="index" data-i18n="nav.home">الرئيسية</a>
-    <a href="about.html" data-page="about" data-i18n="nav.about">من نحن</a>
-    <a href="events.html" data-page="events" data-i18n="nav.events">الفعاليات</a>
-    <a href="invest.html" data-page="invest" data-i18n="nav.invest">الاستثمار</a>
-    <a href="contact.html" data-page="contact" data-i18n="nav.contact">تواصل معنا</a>
-  </nav>
 </header>
 
 <main>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-kicker" data-i18n="hero.kicker">الأمن السيبراني · السودان · المستقبل</div>
-        <h1 class="hero-title">
-          <span class="accent" data-i18n="hero.title.ar">البيت السيبراني السوداني</span>
-          <span class="line-en" data-i18n="hero.title.en">Sudan Cyber House</span>
-        </h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">نبني جيلًا سودانيًا يقود مستقبل الأمن السيبراني.</p>
-        <p class="hero-sub" data-i18n="hero.sub">تعليم مجاني، مهارات حقيقية، وفرص عالمية للسودانيين من 10 إلى 70 عامًا.</p>
-
-        <div class="hero-actions">
-          <a href="#roadmap" class="btn btn-primary" data-i18n="hero.cta1">ابدأ رحلة التعلم</a>
-          <a href="about.html" class="btn btn-outline" data-i18n="hero.cta2">اكتشف المشروع</a>
-        </div>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <div class="hero-meta-num" data-i18n="hero.meta1num">10–70</div>
-            <div class="hero-meta-label" data-i18n="hero.meta1label">سنوات العمر المستهدف</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="hero-meta-num" data-i18n="hero.meta2num">100%</div>
-            <div class="hero-meta-label" data-i18n="hero.meta2label">تعليم مجاني</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="hero-meta-num" data-i18n="hero.meta3num">Online</div>
-            <div class="hero-meta-label" data-i18n="hero.meta3label">المرحلة الحالية</div>
-          </div>
-        </div>
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="reveal in-view">
+      <span class="eyebrow" data-ar="شركة سودانية مستقلة للأمن السيبراني" data-en="Independent Sudanese Cybersecurity Firm">شركة سودانية مستقلة للأمن السيبراني</span>
+      <h1 class="hero-title">
+        <span data-ar="نحمي عالمك الرقمي" data-en="We Guard Your Digital World">نحمي عالمك الرقمي</span><br>
+        <span class="text-gradient" data-ar="بأمان وسلام" data-en="With Security & Peace">بأمان وسلام</span>
+      </h1>
+      <p class="hero-desc" data-ar="البيت السيبراني السوداني هو بيت خبرة متخصص في اختبار الاختراق، الاستجابة للحوادث، والمراقبة الأمنية المستمرة — نحمي مؤسستك بمعايير عالمية وفريق سوداني محترف." data-en="Sudan Cyber House is a house of expertise specialized in penetration testing, incident response, and continuous security monitoring — protecting your organization to global standards with a professional Sudanese team.">
+        البيت السيبراني السوداني هو بيت خبرة متخصص في اختبار الاختراق، الاستجابة للحوادث، والمراقبة الأمنية المستمرة — نحمي مؤسستك بمعايير عالمية وفريق سوداني محترف.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary" data-ar="احجز تقييمًا أمنيًا" data-en="Book a Security Assessment">احجز تقييمًا أمنيًا</a>
+        <a href="services.html" class="btn btn-outline" data-ar="استعرض خدماتنا" data-en="Explore Our Services">استعرض خدماتنا</a>
       </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#2E6BFF" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#2E6BFF" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <circle cx="200" cy="200" r="180" fill="url(#heroGlow)"/>
-          <g class="orbit-ring" stroke="#1B3E8F" stroke-width="1" fill="none" opacity="0.6">
-            <circle cx="200" cy="200" r="150"/>
-          </g>
-          <g class="orbit-ring" stroke="#1B3E8F" stroke-width="1" fill="none" opacity="0.4" style="animation-direction:reverse; animation-duration:80s;">
-            <circle cx="200" cy="200" r="115"/>
-          </g>
-
-          <!-- constellation links -->
-          <g stroke="#2E6BFF" stroke-width="1.4" opacity="0.55">
-            <line class="link-draw" x1="200" y1="90" x2="140" y2="150"/>
-            <line class="link-draw" x1="200" y1="90" x2="260" y2="150"/>
-            <line class="link-draw" x1="140" y1="150" x2="130" y2="230"/>
-            <line class="link-draw" x1="260" y1="150" x2="270" y2="230"/>
-            <line class="link-draw" x1="140" y1="150" x2="260" y2="150"/>
-            <line class="link-draw" x1="130" y1="230" x2="200" y2="290"/>
-            <line class="link-draw" x1="270" y1="230" x2="200" y2="290"/>
-            <line class="link-draw" x1="130" y1="230" x2="270" y2="230"/>
-          </g>
-
-          <!-- nodes: sand accent = Sudan node, cyan = network -->
-          <circle class="node-pulse" cx="200" cy="90" r="4" fill="#E0A868"/>
-          <circle class="node-pulse d2" cx="140" cy="150" r="3.6" fill="#00D9FF"/>
-          <circle class="node-pulse d3" cx="260" cy="150" r="3.6" fill="#00D9FF"/>
-          <circle class="node-pulse d4" cx="130" cy="230" r="3.6" fill="#00D9FF"/>
-          <circle class="node-pulse" cx="270" cy="230" r="3.6" fill="#00D9FF"/>
-          <circle class="node-pulse d2" cx="200" cy="290" r="4.2" fill="#12E3A0"/>
-
-          <!-- shield outline echo -->
-          <path d="M200 60 L300 95 V195 C300 250 255 285 200 305 C145 285 100 250 100 195 V95 Z"
-                fill="none" stroke="#2E6BFF" stroke-width="1" opacity="0.28"/>
-        </svg>
+      <div class="hero-mini-stats">
+        <div class="mini"><span class="num">99.9%</span><span class="lbl" data-ar="جاهزية المراقبة" data-en="Monitoring Uptime">جاهزية المراقبة</span></div>
+        <div class="mini"><span class="num">24/7</span><span class="lbl" data-ar="استجابة للحوادث" data-en="Incident Response">استجابة للحوادث</span></div>
+        <div class="mini"><span class="num">11+</span><span class="lbl" data-ar="خدمة متخصصة" data-en="Specialized Services">خدمة متخصصة</span></div>
       </div>
     </div>
-  </section>
+    <div class="hero-photo reveal in-view">
+      <img src="assets/img/hero.svg" width="900" height="760" alt="أهرامات مروي ونهر النيل ودرع حماية رقمية" fetchpriority="high" decoding="async">
+      <div class="hero-chip c1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i><span data-ar="مراقبة أمنية على مدار الساعة" data-en="Round-the-clock monitoring">مراقبة أمنية على مدار الساعة</span></div>
+      <div class="hero-chip c2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></i><span data-ar="خبرة سودانية بمعايير عالمية" data-en="Sudanese expertise, global standards">خبرة سودانية بمعايير عالمية</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- ================= VISION & MISSION ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="split-cards reveal reveal-stagger">
-        <div class="info-card" style="--i:0">
-          <div class="icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+<!-- ===== About Preview ===== -->
+<section class="section">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow" data-ar="من نحن" data-en="Who We Are">من نحن</span>
+      <h2 class="section-title" data-ar="بيت سوداني خبير، بمعايير عالمية" data-en="A Sudanese House of Expertise, Global Standards">بيت سوداني خبير، بمعايير عالمية</h2>
+      <p class="section-desc" data-ar="البيت السيبراني السوداني (SCH) شركة خاصة مستقلة، غير حكومية وغير تابعة لأي وزارة أو مؤسسة رسمية، تأسست لتقديم خدمات أمن سيبراني احترافية للمؤسسات والشركات داخل السودان وخارجه. نجمع بين الخبرة التقنية العميقة والفهم المحلي لنبني دفاعات رقمية موثوقة." data-en="Sudan Cyber House (SCH) is an independent private company — not a government entity and not affiliated with any ministry or official institution — founded to deliver professional cybersecurity services to organizations and businesses inside Sudan and beyond. We combine deep technical expertise with local understanding to build trustworthy digital defenses.">
+        البيت السيبراني السوداني (SCH) شركة خاصة مستقلة، غير حكومية وغير تابعة لأي وزارة أو مؤسسة رسمية، تأسست لتقديم خدمات أمن سيبراني احترافية للمؤسسات والشركات داخل السودان وخارجه. نجمع بين الخبرة التقنية العميقة والفهم المحلي لنبني دفاعات رقمية موثوقة.
+      </p>
+      <a href="about.html" class="btn btn-outline" style="margin-top:26px;" data-ar="اقرأ المزيد عن الشركة" data-en="Read More About Us">اقرأ المزيد عن الشركة</a>
+    </div>
+    <div class="split-media reveal"><img src="assets/img/g-local.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<!-- ===== Our Goals ===== -->
+<section class="section" id="goals">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-ar="أهدافنا" data-en="Our Goals">أهدافنا</span>
+      <h2 class="section-title" data-ar="ما نسعى لتحقيقه لسودان أكثر أمانًا" data-en="What We Work Toward for a Safer Sudan">ما نسعى لتحقيقه لسودان أكثر أمانًا</h2>
+      <p class="section-desc" data-ar="ستة أهداف توجّه عملنا: حماية المؤسسات، ونشر الوعي، وبناء الكفاءات، ودعم المجتمع." data-en="Six goals guide our work: protecting organizations, spreading awareness, building skills, and supporting the community.">ستة أهداف توجّه عملنا: حماية المؤسسات، ونشر الوعي، وبناء الكفاءات، ودعم المجتمع.</p>
+    </div>
+    <div class="goals-grid snap-x">
+      <article class="goal-card reveal"><img src="assets/img/g-protect.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="حماية المؤسسات رقميًا" data-en="Protecting Organizations">حماية المؤسسات رقميًا</h3><p data-ar="نقدّم خدمات أمن سيبراني احترافية تحمي الشركات والمؤسسات داخل السودان وخارجه من التهديدات المتطورة." data-en="We deliver professional cybersecurity services that protect businesses and institutions in Sudan and beyond from evolving threats.">نقدّم خدمات أمن سيبراني احترافية تحمي الشركات والمؤسسات داخل السودان وخارجه من التهديدات المتطورة.</p></div></article>
+      <article class="goal-card reveal"><img src="assets/img/g-awareness.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="نشر الوعي الرقمي" data-en="Spreading Digital Awareness">نشر الوعي الرقمي</h3><p data-ar="نرفع وعي الأفراد والمؤسسات بالتصيّد والهندسة الاجتماعية وحماية الحسابات والبيانات." data-en="We raise awareness of phishing, social engineering, and account and data protection.">نرفع وعي الأفراد والمؤسسات بالتصيّد والهندسة الاجتماعية وحماية الحسابات والبيانات.</p></div></article>
+      <article class="goal-card reveal"><img src="assets/img/g-train.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="التدريب وبناء الكفاءات" data-en="Training & Skills">التدريب وبناء الكفاءات</h3><p data-ar="ندرّب الكوادر السودانية ونبني جيلًا من المتخصصين في الأمن السيبراني." data-en="We train Sudanese talent and help build a new generation of cybersecurity specialists.">ندرّب الكوادر السودانية ونبني جيلًا من المتخصصين في الأمن السيبراني.</p></div></article>
+      <article class="goal-card reveal"><img src="assets/img/g-initiative.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="دعم مبادرات المجتمع" data-en="Supporting Community Initiatives">دعم مبادرات المجتمع</h3><p data-ar="نخصّص 30% من أرباحنا لمبادرات من أجل سودان أفضل: التعليم والتقنية والشباب والوعي الرقمي." data-en="We dedicate 30% of our profits to initiatives for a better Sudan: education, technology, youth, and digital awareness.">نخصّص 30% من أرباحنا لمبادرات من أجل سودان أفضل: التعليم والتقنية والشباب والوعي الرقمي.</p></div></article>
+      <article class="goal-card reveal"><img src="assets/img/g-local.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="تعزيز الخبرة المحلية" data-en="Strengthening Local Expertise">تعزيز الخبرة المحلية</h3><p data-ar="نجمع بين الفهم المحلي العميق والخبرة التقنية لنبني دفاعات رقمية يمكن الوثوق بها." data-en="We combine deep local understanding with technical expertise to build digital defenses you can trust.">نجمع بين الفهم المحلي العميق والخبرة التقنية لنبني دفاعات رقمية يمكن الوثوق بها.</p></div></article>
+      <article class="goal-card reveal"><img src="assets/img/g-global.svg" width="480" height="300" alt="" loading="lazy" decoding="async"><div class="goal-body"><h3 data-ar="الارتباط بالمعايير العالمية" data-en="Linking to Global Standards">الارتباط بالمعايير العالمية</h3><p data-ar="نعمل وفق أفضل الممارسات الدولية ونربط السوق السوداني بالمعرفة والفرص العالمية." data-en="We follow international best practices and connect Sudan's market to global knowledge and opportunities.">نعمل وفق أفضل الممارسات الدولية ونربط السوق السوداني بالمعرفة والفرص العالمية.</p></div></article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Services ===== -->
+<section class="section sec-soft" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-ar="خدماتنا" data-en="Our Services">خدماتنا</span>
+      <h2 class="section-title" data-ar="حماية شاملة لكل طبقات مؤسستك" data-en="Full-Spectrum Protection for Every Layer">حماية شاملة لكل طبقات مؤسستك</h2>
+      <p class="section-desc" data-ar="من اختبار الاختراق إلى الاستجابة للحوادث، نقدم مجموعة متكاملة من الخدمات المصممة وفق احتياجات مؤسستك." data-en="From penetration testing to incident response, we deliver an integrated suite of services tailored to your organization's needs.">من اختبار الاختراق إلى الاستجابة للحوادث، نقدم مجموعة متكاملة من الخدمات المصممة وفق احتياجات مؤسستك.</p>
+    </div>
+
+    <div class="grid grid-3 snap-x">
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-ar="اختبار الاختراق" data-en="Penetration Testing">اختبار الاختراق</h3>
+        <p data-ar="محاكاة هجمات حقيقية لكشف الثغرات قبل استغلالها من قبل المهاجمين." data-en="Simulated real-world attacks to uncover vulnerabilities before attackers exploit them.">محاكاة هجمات حقيقية لكشف الثغرات قبل استغلالها من قبل المهاجمين.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <h3 data-ar="تقييم الثغرات" data-en="Vulnerability Assessment">تقييم الثغرات</h3>
+        <p data-ar="فحص شامل للأنظمة والشبكات لتحديد نقاط الضعف وترتيبها حسب الخطورة." data-en="Comprehensive scanning of systems and networks to identify and prioritize weaknesses.">فحص شامل للأنظمة والشبكات لتحديد نقاط الضعف وترتيبها حسب الخطورة.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
+        <h3 data-ar="الأدلة الجنائية الرقمية" data-en="Digital Forensics">الأدلة الجنائية الرقمية</h3>
+        <p data-ar="تحليل الأدلة الرقمية بعد الحوادث لكشف أسباب الاختراق ومسار المهاجم." data-en="Post-incident digital evidence analysis to uncover breach causes and attacker footprints.">تحليل الأدلة الرقمية بعد الحوادث لكشف أسباب الاختراق ومسار المهاجم.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3 data-ar="الاستجابة للحوادث" data-en="Incident Response">الاستجابة للحوادث</h3>
+        <p data-ar="فريق جاهز على مدار الساعة لاحتواء الحوادث الأمنية والحد من أضرارها فورًا." data-en="A 24/7-ready team to contain security incidents and minimize damage immediately.">فريق جاهز على مدار الساعة لاحتواء الحوادث الأمنية والحد من أضرارها فورًا.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><circle cx="17" cy="9" r="1.5"/></svg></div>
+        <h3 data-ar="مركز العمليات الأمنية (SOC)" data-en="Security Operations Center (SOC)">مركز العمليات الأمنية (SOC)</h3>
+        <p data-ar="مراقبة مستمرة على مدار الساعة لأنظمتك لرصد التهديدات والتعامل معها فورًا." data-en="Round-the-clock monitoring of your systems to detect and act on threats instantly.">مراقبة مستمرة على مدار الساعة لأنظمتك لرصد التهديدات والتعامل معها فورًا.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3 data-ar="التدقيق الأمني" data-en="Security Auditing">التدقيق الأمني</h3>
+        <p data-ar="مراجعة شاملة للسياسات والأنظمة للتأكد من التوافق مع أفضل الممارسات العالمية." data-en="A full review of policies and systems to ensure alignment with global best practices.">مراجعة شاملة للسياسات والأنظمة للتأكد من التوافق مع أفضل الممارسات العالمية.</p>
+        <a href="services.html" class="card-link"><span data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:50px;" class="reveal">
+      <a href="services.html" class="btn btn-gold" data-ar="عرض جميع الخدمات (11)" data-en="View All 11 Services">عرض جميع الخدمات (11)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Statistics ===== -->
+<section class="section-sm stats-section">
+  <div class="container">
+    <div class="grid grid-4">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span data-counter="99.9" data-decimals="1">0</span>%</div>
+        <div class="stat-label" data-ar="جاهزية المراقبة" data-en="Monitoring Uptime">جاهزية المراقبة</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num"><span data-counter="24" data-decimals="0">0</span>/7</div>
+        <div class="stat-label" data-ar="دعم واستجابة" data-en="Support & Response">دعم واستجابة</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num"><span data-counter="11" data-decimals="0">0</span>+</div>
+        <div class="stat-label" data-ar="خدمة متخصصة" data-en="Specialized Services">خدمة متخصصة</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Choose Us ===== -->
+<section class="section">
+  <div class="container">
+    <div class="grid" style="grid-template-columns: 1fr 1fr; gap:60px; align-items:center;">
+      <div class="reveal">
+        <span class="eyebrow" data-ar="لماذا نحن" data-en="Why Choose Us">لماذا نحن</span>
+        <h2 class="section-title" data-ar="خبرة محلية بمعايير عالمية" data-en="Local Expertise, Global Standards">خبرة محلية بمعايير عالمية</h2>
+        <p class="section-desc" data-ar="نجمع بين فهمنا العميق للبيئة الرقمية السودانية والإقليمية، وبين أفضل الممارسات والمعايير العالمية في الأمن السيبراني." data-en="We combine deep understanding of the Sudanese and regional digital landscape with the best global cybersecurity practices and standards.">نجمع بين فهمنا العميق للبيئة الرقمية السودانية والإقليمية، وبين أفضل الممارسات والمعايير العالمية في الأمن السيبراني.</p>
+      </div>
+      <div class="reveal">
+        <div class="why-item">
+          <span class="why-num">01</span>
+          <div class="why-body">
+            <h4 data-ar="فريق محترف ومعتمد" data-en="Certified Professional Team">فريق محترف ومعتمد</h4>
+            <p data-ar="خبراء أمن سيبراني بخبرة عملية في اختبار الاختراق والاستجابة للحوادث." data-en="Cybersecurity experts with hands-on experience in penetration testing and incident response.">خبراء أمن سيبراني بخبرة عملية في اختبار الاختراق والاستجابة للحوادث.</p>
           </div>
-          <h3 data-i18n="vision.title">رؤيتنا</h3>
-          <p data-i18n="vision.text">نؤمن أن السودان يمتلك عقولًا قادرة على المنافسة عالميًا في الأمن السيبراني...</p>
         </div>
-        <div class="info-card" style="--i:1">
-          <div class="icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+        <div class="why-item">
+          <span class="why-num">02</span>
+          <div class="why-body">
+            <h4 data-ar="سرية وثقة تامة" data-en="Confidentiality & Trust">سرية وثقة تامة</h4>
+            <p data-ar="نتعامل مع بيانات عملائنا بأعلى درجات الخصوصية والالتزام الأخلاقي." data-en="We handle client data with the highest levels of privacy and ethical commitment.">نتعامل مع بيانات عملائنا بأعلى درجات الخصوصية والالتزام الأخلاقي.</p>
           </div>
-          <h3 data-i18n="mission.title">رسالتنا</h3>
-          <p data-i18n="mission.text">إتاحة التعليم والتدريب العملي في الأمن السيبراني لكل سوداني...</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num">03</span>
+          <div class="why-body">
+            <h4 data-ar="استجابة سريعة" data-en="Rapid Response">استجابة سريعة</h4>
+            <p data-ar="فريق جاهز للتحرك الفوري عند وقوع أي حادث أمني، على مدار الساعة." data-en="A team ready to act immediately on any security incident, around the clock.">فريق جاهز للتحرك الفوري عند وقوع أي حادث أمني، على مدار الساعة.</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= AUDIENCE / AGES ================= -->
-  <section>
-    <div class="container">
+<!-- ===== Mission / Vision / Values ===== -->
+<section class="section sec-soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-ar="من نؤمن به" data-en="What We Stand For">من نؤمن به</span>
+      <h2 class="section-title" data-ar="رسالتنا، رؤيتنا، وقيمنا" data-en="Our Mission, Vision & Values">رسالتنا، رؤيتنا، وقيمنا</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card mvv-card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+        <h3 data-ar="رسالتنا" data-en="Our Mission">رسالتنا</h3>
+        <p data-ar="حماية المؤسسات والأفراد رقميًا من خلال حلول أمن سيبراني موثوقة، مبنية على الخبرة والاحترافية." data-en="Protecting organizations and individuals digitally through reliable cybersecurity solutions built on expertise and professionalism.">حماية المؤسسات والأفراد رقميًا من خلال حلول أمن سيبراني موثوقة، مبنية على الخبرة والاحترافية.</p>
+      </div>
+      <div class="card mvv-card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div>
+        <h3 data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h3>
+        <p data-ar="أن نكون البيت السيبراني الأول والمرجع الموثوق للأمن الرقمي في السودان والمنطقة." data-en="To become the leading cyber house and trusted reference for digital security in Sudan and the region.">أن نكون البيت السيبراني الأول والمرجع الموثوق للأمن الرقمي في السودان والمنطقة.</p>
+      </div>
+      <div class="card mvv-card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-4-2-8-5.5-8-11V5l8-3 8 3v5c0 5.5-4 9-8 11z"/></svg></div>
+        <h3 data-ar="قيمنا" data-en="Our Values">قيمنا</h3>
+        <p data-ar="النزاهة، الشفافية، الاحترافية، والالتزام المستمر بأعلى معايير الأمان والسلام الرقمي." data-en="Integrity, transparency, professionalism, and a continuous commitment to the highest standards of security and digital peace.">النزاهة، الشفافية، الاحترافية، والالتزام المستمر بأعلى معايير الأمان والسلام الرقمي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-ar="آراء عملائنا" data-en="Client Voices">آراء عملائنا</span>
+      <h2 class="section-title" data-ar="ثقة نبنيها كل يوم" data-en="Trust We Build Every Day">ثقة نبنيها كل يوم</h2>
+    </div>
+    <div class="testi-track-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-slide">
+          <div class="glass testi-card">
+            <svg class="testi-quote" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6"><path d="M7 8c-2.2 0-4 1.8-4 4v4h6v-6H7c0-1.1.9-2 2-2V8zm10 0c-2.2 0-4 1.8-4 4v4h6v-6h-2c0-1.1.9-2 2-2V8z"/></svg>
+            <p class="testi-text" data-ar="فريق البيت السيبراني السوداني قدّم لنا تقييمًا أمنيًا دقيقًا واحترافيًا كشف عن ثغرات لم نكن ندركها. تعامل سريع ونتائج واضحة." data-en="The SCH team delivered a precise, professional security assessment that uncovered vulnerabilities we hadn't recognized. Fast turnaround, clear results.">فريق البيت السيبراني السوداني قدّم لنا تقييمًا أمنيًا دقيقًا واحترافيًا كشف عن ثغرات لم نكن ندركها. تعامل سريع ونتائج واضحة.</p>
+            <div class="testi-name" data-ar="مدير تقنية المعلومات" data-en="IT Director">مدير تقنية المعلومات</div>
+            <div class="testi-role" data-ar="قطاع الخدمات المالية" data-en="Financial Services Sector">قطاع الخدمات المالية</div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <div class="glass testi-card">
+            <svg class="testi-quote" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6"><path d="M7 8c-2.2 0-4 1.8-4 4v4h6v-6H7c0-1.1.9-2 2-2V8zm10 0c-2.2 0-4 1.8-4 4v4h6v-6h-2c0-1.1.9-2 2-2V8z"/></svg>
+            <p class="testi-text" data-ar="الاستجابة للحادث الأمني كانت سريعة جدًا، واحتوى الفريق الموقف قبل أن يتفاقم. نوصي بهم بثقة تامة." data-en="Response to our security incident was extremely fast, and the team contained the situation before it escalated. We recommend them with full confidence.">الاستجابة للحادث الأمني كانت سريعة جدًا، واحتوى الفريق الموقف قبل أن يتفاقم. نوصي بهم بثقة تامة.</p>
+            <div class="testi-name" data-ar="الرئيس التنفيذي" data-en="Chief Executive Officer">الرئيس التنفيذي</div>
+            <div class="testi-role" data-ar="شركة تجارة إلكترونية" data-en="E-commerce Company">شركة تجارة إلكترونية</div>
+          </div>
+        </div>
+        <div class="testi-slide">
+          <div class="glass testi-card">
+            <svg class="testi-quote" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.6"><path d="M7 8c-2.2 0-4 1.8-4 4v4h6v-6H7c0-1.1.9-2 2-2V8zm10 0c-2.2 0-4 1.8-4 4v4h6v-6h-2c0-1.1.9-2 2-2V8z"/></svg>
+            <p class="testi-text" data-ar="خدمة مراقبة SOC غيّرت طريقة تعاملنا مع التهديدات — أصبحنا نعرف بالمخاطر قبل أن تتحول لمشاكل حقيقية." data-en="The SOC monitoring service transformed how we handle threats — we now know about risks before they become real problems.">خدمة مراقبة SOC غيّرت طريقة تعاملنا مع التهديدات — أصبحنا نعرف بالمخاطر قبل أن تتحول لمشاكل حقيقية.</p>
+            <div class="testi-name" data-ar="مدير العمليات" data-en="Operations Manager">مدير العمليات</div>
+            <div class="testi-role" data-ar="قطاع الاتصالات" data-en="Telecom Sector">قطاع الاتصالات</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-controls" id="testiDots"></div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section sec-soft">
+  <div class="container">
+    <div class="grid" style="grid-template-columns: 1fr; max-width:820px; margin-inline:auto;">
       <div class="section-head center reveal">
-        <div class="eyebrow" data-i18n="audience.eyebrow">الفئة المستهدفة</div>
-        <h2 class="section-title" data-i18n="audience.title">الأمن السيبراني للجميع</h2>
-        <p class="section-desc" data-i18n="audience.desc">من الطفولة إلى الحكمة — كل مرحلة عمرية لها مكانها في هذه الرحلة.</p>
+        <span class="eyebrow" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</span>
+        <h2 class="section-title" data-ar="أسئلة يتكرر طرحها" data-en="Frequently Asked Questions">أسئلة يتكرر طرحها</h2>
       </div>
-
-      <div class="age-grid reveal reveal-stagger">
-        <div class="age-chip" style="--i:0"><div class="range">10–15</div></div>
-        <div class="age-chip" style="--i:1"><div class="range">16–20</div></div>
-        <div class="age-chip" style="--i:2"><div class="range">21–30</div></div>
-        <div class="age-chip" style="--i:3"><div class="range">31–40</div></div>
-        <div class="age-chip" style="--i:4"><div class="range">41–50</div></div>
-        <div class="age-chip" style="--i:5"><div class="range">51–60</div></div>
-        <div class="age-chip" style="--i:6"><div class="range">61–70</div></div>
-      </div>
-
-      <div class="age-note reveal">
-        <span class="pill" data-i18n="audience.note1">لا يوجد عمر متأخر لتعلم الأمن السيبراني.</span>
-        <span class="pill" data-i18n="audience.note2">لا يشترط أن تكون مبرمجًا لتبدأ.</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= INCLUSION ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="inclusion-wrap">
-        <div class="reveal">
-          <div class="eyebrow" data-i18n="inclusion.eyebrow">الشمول</div>
-          <h2 class="section-title" data-i18n="inclusion.title">مكان للجميع</h2>
-          <p class="section-desc" data-i18n="inclusion.text">Sudan Cyber House مفتوح للسودانيين من جميع الخلفيات...</p>
+      <div class="faq-list reveal">
+        <div class="faq-item open">
+          <button class="faq-q"><span data-ar="هل البيت السيبراني السوداني جهة حكومية؟" data-en="Is Sudan Cyber House a government entity?">هل البيت السيبراني السوداني جهة حكومية؟</span><span class="plus"></span></button>
+          <div class="faq-a"><p data-ar="لا. البيت السيبراني السوداني شركة خاصة مستقلة تمامًا، وليست تابعة لأي وزارة أو مؤسسة حكومية." data-en="No. Sudan Cyber House is a fully independent private company, not affiliated with any ministry or government institution.">لا. البيت السيبراني السوداني شركة خاصة مستقلة تمامًا، وليست تابعة لأي وزارة أو مؤسسة حكومية.</p></div>
         </div>
-        <div class="tag-cloud reveal">
-          <span data-i18n="inclusion.tag1">نساء ورجال</span>
-          <span data-i18n="inclusion.tag2">طلاب وموظفون</span>
-          <span data-i18n="inclusion.tag3">مبتدئون ومحترفون</span>
-          <span data-i18n="inclusion.tag4">جميع الخلفيات</span>
-          <span data-i18n="inclusion.tag5">جميع الولايات</span>
-          <span data-i18n="inclusion.tag6">من الداخل والخارج</span>
+        <div class="faq-item">
+          <button class="faq-q"><span data-ar="ما هي مدة تنفيذ اختبار الاختراق عادةً؟" data-en="How long does a typical penetration test take?">ما هي مدة تنفيذ اختبار الاختراق عادةً؟</span><span class="plus"></span></button>
+          <div class="faq-a"><p data-ar="تختلف المدة حسب نطاق المشروع، لكنها تتراوح غالبًا بين أسبوع إلى ثلاثة أسابيع، مع تقرير مفصل في النهاية." data-en="Duration varies by project scope, but typically ranges from one to three weeks, ending with a detailed report.">تختلف المدة حسب نطاق المشروع، لكنها تتراوح غالبًا بين أسبوع إلى ثلاثة أسابيع، مع تقرير مفصل في النهاية.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-ar="هل تقدمون خدمات لمؤسسات خارج السودان؟" data-en="Do you serve organizations outside Sudan?">هل تقدمون خدمات لمؤسسات خارج السودان؟</span><span class="plus"></span></button>
+          <div class="faq-a"><p data-ar="نعم، نقدم خدماتنا عن بعد وفي الموقع لمؤسسات إقليمية ودولية حسب طبيعة المشروع." data-en="Yes, we deliver our services remotely and on-site to regional and international organizations depending on the project.">نعم، نقدم خدماتنا عن بعد وفي الموقع لمؤسسات إقليمية ودولية حسب طبيعة المشروع.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-ar="كيف تحافظون على سرية بيانات العملاء؟" data-en="How do you protect client data confidentiality?">كيف تحافظون على سرية بيانات العملاء؟</span><span class="plus"></span></button>
+          <div class="faq-a"><p data-ar="نلتزم باتفاقيات عدم إفشاء (NDA) مع كل عميل، ونطبق سياسات صارمة للتعامل مع البيانات الحساسة." data-en="We sign NDAs with every client and apply strict policies for handling sensitive data.">نلتزم باتفاقيات عدم إفشاء (NDA) مع كل عميل، ونطبق سياسات صارمة للتعامل مع البيانات الحساسة.</p></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= ROADMAP ================= -->
-  <section id="roadmap">
-    <div class="container">
-      <div class="section-head center reveal">
-        <div class="eyebrow" data-i18n="roadmap.eyebrow">مسار التعلم</div>
-        <h2 class="section-title" data-i18n="roadmap.title">من المعرفة الأساسية إلى العمل</h2>
-        <p class="section-desc" data-i18n="roadmap.desc">عشر مراحل تأخذ المتعلم خطوة بخطوة نحو الاحتراف.</p>
-      </div>
 
-      <div class="roadmap reveal">
-        <div class="road-step"><div class="road-num">01</div><div class="road-body"><h4 data-i18n="road1.t">الوعي السيبراني</h4><p data-i18n="road1.d">فهم المخاطر الرقمية الأساسية.</p></div></div>
-        <div class="road-step"><div class="road-num">02</div><div class="road-body"><h4 data-i18n="road2.t">السلامة الرقمية</h4><p data-i18n="road2.d">حماية الهوية والبيانات الشخصية.</p></div></div>
-        <div class="road-step"><div class="road-num">03</div><div class="road-body"><h4 data-i18n="road3.t">أساسيات الأمن السيبراني</h4><p data-i18n="road3.d">المفاهيم والمبادئ الأساسية.</p></div></div>
-        <div class="road-step"><div class="road-num">04</div><div class="road-body"><h4 data-i18n="road4.t">الشبكات</h4><p data-i18n="road4.d">فهم كيفية عمل الشبكات.</p></div></div>
-        <div class="road-step"><div class="road-num">05</div><div class="road-body"><h4 data-i18n="road5.t">الاختراق الأخلاقي</h4><p data-i18n="road5.d">اكتشاف الثغرات بأسلوب مسؤول.</p></div></div>
-        <div class="road-step"><div class="road-num">06</div><div class="road-body"><h4 data-i18n="road6.t">الأمن الدفاعي</h4><p data-i18n="road6.d">بناء أنظمة حماية استباقية.</p></div></div>
-        <div class="road-step"><div class="road-num">07</div><div class="road-body"><h4 data-i18n="road7.t">مراكز العمليات والاستجابة</h4><p data-i18n="road7.d">التعامل مع الحوادث الأمنية.</p></div></div>
-        <div class="road-step"><div class="road-num">08</div><div class="road-body"><h4 data-i18n="road8.t">الأمن السيبراني المتقدم</h4><p data-i18n="road8.d">تخصصات عميقة ومتقدمة.</p></div></div>
-        <div class="road-step"><div class="road-num">09</div><div class="road-body"><h4 data-i18n="road9.t">مشاريع حقيقية</h4><p data-i18n="road9.d">تطبيق المهارات على حالات واقعية.</p></div></div>
-        <div class="road-step"><div class="road-num">10</div><div class="road-body"><h4 data-i18n="road10.t">المسار المهني والتوظيف</h4><p data-i18n="road10.d">الانتقال إلى فرص عمل حقيقية.</p></div></div>
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="eyebrow" data-ar="جاهزون للبدء؟" data-en="Ready to Start?">جاهزون للبدء؟</span>
+      <h2 data-ar="لنؤمّن عالمك الرقمي معًا" data-en="Let's Secure Your Digital World, Together">لنؤمّن عالمك الرقمي معًا</h2>
+      <p data-ar="تواصل مع فريقنا اليوم لبدء تقييم أمني شامل لمؤسستك، أو لمناقشة احتياجاتك الخاصة." data-en="Contact our team today to start a full security assessment for your organization, or to discuss your specific needs.">تواصل مع فريقنا اليوم لبدء تقييم أمني شامل لمؤسستك، أو لمناقشة احتياجاتك الخاصة.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-ar="تواصل معنا الآن" data-en="Contact Us Now">تواصل معنا الآن</a>
+        <a href="about.html" class="btn btn-outline" data-ar="تعرف على فريقنا" data-en="Meet Our Team">تعرف على فريقنا</a>
       </div>
     </div>
-  </section>
-
-  <!-- ================= LEARN -> LEAD FLOW ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="section-head center reveal">
-        <div class="eyebrow" data-i18n="flow.eyebrow">من متعلم إلى محترف</div>
-        <h2 class="section-title" data-i18n="flow.title">من متعلم إلى محترف</h2>
-        <p class="section-desc" data-i18n="flow.text">هدفنا ألا تنتهي رحلة المتعلم عند الشهادة...</p>
-      </div>
-
-      <div class="flow-row reveal">
-        <div class="flow-step" data-i18n="flow.learn">تعلّم</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step" data-i18n="flow.practice">طبّق</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step" data-i18n="flow.build">ابنِ</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step" data-i18n="flow.work">اعمل</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-step" data-i18n="flow.lead">قد</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= STATS ================= -->
-  <section>
-    <div class="container">
-      <div class="stats-grid reveal reveal-stagger">
-        <div class="stat-card" style="--i:0"><div class="stat-num">10–70</div><div class="stat-label" data-i18n="stats.l1">سنوات العمر المستهدف</div></div>
-        <div class="stat-card" style="--i:1"><div class="stat-num" data-count-to="100" data-count-suffix="%">0%</div><div class="stat-label" data-i18n="stats.l2">تعلم مجاني</div></div>
-        <div class="stat-card" style="--i:2"><div class="stat-num">Online</div><div class="stat-label" data-i18n="stats.l3">المرحلة الحالية</div></div>
-        <div class="stat-card" style="--i:3"><div class="stat-num">Global</div><div class="stat-label" data-i18n="stats.l4">الهدف النهائي</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WHY SUDAN ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="why-grid">
-        <div class="reveal">
-          <div class="eyebrow" data-i18n="why.eyebrow">لماذا السودان؟</div>
-          <h2 class="section-title" data-i18n="why.title">لماذا السودان؟</h2>
-          <ul class="why-list">
-            <li><span class="dot"></span><span data-i18n="why.li1">شباب موهوب يمتلك فضولًا تقنيًا حقيقيًا.</span></li>
-            <li><span class="dot"></span><span data-i18n="why.li2">طاقات رقمية لم تُستثمر بالشكل الكافي بعد.</span></li>
-            <li><span class="dot"></span><span data-i18n="why.li3">احتياج متزايد للمهارات الرقمية محليًا وإقليميًا.</span></li>
-            <li><span class="dot"></span><span data-i18n="why.li4">فرصة حقيقية لبناء قطاع Cybersecurity من الصفر.</span></li>
-            <li><span class="dot"></span><span data-i18n="why.li5">إمكانية تصدير خدمات رقمية سودانية للعالم.</span></li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <blockquote class="quote-block" data-i18n="why.quote">
-            لا نريد أن يكون السودان مستهلكًا للتكنولوجيا فقط؛ نريد أن يكون السودان منتجًا للمعرفة والخدمات السيبرانية.
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= GLOBAL GOAL ================= -->
-  <section>
-    <div class="container">
-      <div class="section-head center reveal">
-        <div class="eyebrow" data-i18n="goal.eyebrow">الهدف العالمي</div>
-        <h2 class="section-title" data-i18n="goal.titleAr">هدفنا: جعل السودان وجهة سيبرانية دولية</h2>
-        <p class="section-desc" data-i18n="goal.text">من مجتمع محلي متعلم إلى شبكة سودانية قادرة على المنافسة والتعاون مع العالم أجمع.</p>
-      </div>
-
-      <div class="globe-wrap reveal" aria-hidden="true">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="200" r="140" fill="none" stroke="#1B3E8F" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="140" ry="55" fill="none" stroke="#1B3E8F" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="140" ry="95" fill="none" stroke="#1B3E8F" stroke-width="1" opacity="0.7"/>
-          <ellipse cx="200" cy="200" rx="55" ry="140" fill="none" stroke="#1B3E8F" stroke-width="1" opacity="0.7"/>
-          <g class="orbit-ring" style="animation-duration:50s;">
-            <line class="link-draw" x1="200" y1="200" x2="90" y2="130" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-            <line class="link-draw" x1="200" y1="200" x2="320" y2="110" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-            <line class="link-draw" x1="200" y1="200" x2="300" y2="300" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-            <line class="link-draw" x1="200" y1="200" x2="100" y2="290" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-          </g>
-          <circle class="node-pulse" cx="200" cy="200" r="6" fill="#E0A868"/>
-          <circle class="node-pulse d2" cx="90" cy="130" r="3.4" fill="#00D9FF"/>
-          <circle class="node-pulse d3" cx="320" cy="110" r="3.4" fill="#00D9FF"/>
-          <circle class="node-pulse d4" cx="300" cy="300" r="3.4" fill="#12E3A0"/>
-          <circle class="node-pulse" cx="100" cy="290" r="3.4" fill="#00D9FF"/>
-        </svg>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container">
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container footer-top">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <svg class="brand-mark" width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 3 L43 11 V25 C43 35 35 42 24 45 C13 42 5 35 5 25 V11 Z" stroke="#00D9FF" stroke-width="2"/>
-            <path d="M30 16c0-2.2-2.5-4-6-4s-6 1.6-6 3.6c0 5 12 2.6 12 8 0 2-2.5 3.6-6 3.6s-6-1.8-6-4" stroke="#00D9FF" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-          </svg>
-          <span class="brand-name-en">Sudan Cyber House</span>
+      <div class="footer-about">
+        <span class="brand-logo"><span class="l-s">S</span><span class="l-c">C</span><span class="l-h">H</span></span>
+        <p data-ar="البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام." data-en="Sudan Cyber House — an independent private cybersecurity company. Security & Peace.">البيت السيبراني السوداني — شركة خاصة مستقلة متخصصة في الأمن السيبراني. أمان وسلام.</p>
+        <span class="footer-badge" data-ar="شركة خاصة غير حكومية" data-en="Private, Non-Government Company">شركة خاصة غير حكومية</span>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="mailto:dr.ayman.alkinani@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
         </div>
-        <p data-i18n="footer.tagline">نبني مستقبل السودان السيبراني.</p>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.linksTitle">روابط</h4>
-        <a href="index.html" data-i18n="nav.home">الرئيسية</a>
-        <a href="about.html" data-i18n="nav.about">من نحن</a>
-        <a href="events.html" data-i18n="nav.events">الفعاليات</a>
-        <a href="invest.html" data-i18n="nav.invest">الاستثمار</a>
-        <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+          <li><a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
+          <li><a href="events.html" data-ar="الفعاليات" data-en="Events">الفعاليات</a></li>
+          <li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer.contactTitle">تواصل</h4>
-        <span>dr.ayman.alkinani@gmail.com</span>
+      <div class="footer-links-col">
+        <h4 class="footer-title" data-ar="خدمات مختارة" data-en="Featured Services">خدمات مختارة</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" data-ar="اختبار الاختراق" data-en="Penetration Testing">اختبار الاختراق</a></li>
+          <li><a href="services.html" data-ar="الاستجابة للحوادث" data-en="Incident Response">الاستجابة للحوادث</a></li>
+          <li><a href="services.html" data-ar="مركز العمليات الأمنية" data-en="SOC">مركز العمليات الأمنية</a></li>
+          <li><a href="services.html" data-ar="أمن السحابة" data-en="Cloud Security">أمن السحابة</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span data-i18n="footer.rights">© 2026 Sudan Cyber House. جميع الحقوق محفوظة.</span>
-      <span class="signature" data-i18n="footer.signature">تصميم وتطوير: Kin</span>
+      <div class="footer-contact-col">
+        <h4 class="footer-title" data-ar="تواصل معنا" data-en="Get in Touch">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 21a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3 3h4a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.1 10.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 17.92z"/></svg><span data-ar="متاح عبر البريد الإلكتروني" data-en="Available via email">متاح عبر البريد الإلكتروني</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-ar="السودان" data-en="Sudan">السودان</span></li>
+        </ul>
+      </div>
     </div>
   </div>
+  <div class="divider"></div>
+  <div class="container footer-bottom">
+    <span data-ar="© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة." data-en="© 2026 Sudan Cyber House (SCH). All rights reserved.">© 2026 البيت السيبراني السوداني (SCH). جميع الحقوق محفوظة.</span>
+    <span class="legal-note" data-ar="شركة خاصة مستقلة — ليست جهة حكومية" data-en="Independent Private Company — Not a Government Entity">شركة خاصة مستقلة — ليست جهة حكومية</span>
+  </div>
 </footer>
+
+<!-- ===== Mobile app bar ===== -->
+<nav class="tabbar" aria-label="التنقل الرئيسي">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+  <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-ar="من نحن" data-en="About">من نحن</span></a>
+  <a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-ar="الخدمات" data-en="Services">الخدمات</span></a>
+  <a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span data-ar="الفعاليات" data-en="Events">الفعاليات</span></a>
+  <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 6-10 7L2 6"/></svg><span data-ar="تواصل" data-en="Contact">تواصل</span></a>
+</nav>
+
+
+<button id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="main.js"></script>
 </body>
